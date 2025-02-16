@@ -1,0 +1,42 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: viewver-binding
+  namespace: team-a
+subjects:
+  - kind: ServiceAccount
+    name: viewver
+    namespace: team-a
+roleRef:
+  kind: Role
+  name: viewer-role
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: team-a
+subjects:
+  - kind: ServiceAccount
+    name: admin
+    namespace: team-a
+roleRef:
+  kind: Role
+  name: admin-role
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: god-binding-for-admin
+  namespace: team-a
+subjects:
+  - kind: ServiceAccount
+    name: god
+    namespace: team-a
+roleRef:
+  kind: Role
+  name: god-role
+  apiGroup: rbac.authorization.k8s.io

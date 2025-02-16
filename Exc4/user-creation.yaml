@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: team-a
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: viewver
+  namespace: team-a
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin
+  namespace: team-a
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: god
+  namespace: team-a
